@@ -5,11 +5,17 @@
     box-sizing: border-box;
 }
 
+/* Body and general styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #87CEEB; /* Sky blue background */
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    display: flex;
+    flex-direction: column; /* Makes sure footer sticks at the bottom */
 }
 
+/* Header navigation */
 header {
     background: #333;
     color: white;
@@ -31,6 +37,7 @@ header nav ul li a {
     text-decoration: none;
 }
 
+/* Hero section */
 .hero {
     background: #007bff;
     color: white;
@@ -38,6 +45,7 @@ header nav ul li a {
     text-align: center;
 }
 
+/* Button in the hero section */
 .hero .btn {
     padding: 10px 20px;
     background: #fff;
@@ -46,11 +54,13 @@ header nav ul li a {
     text-decoration: none;
 }
 
+/* Footer positioning */
 footer {
     background: #333;
     color: white;
     padding: 10px 0;
     text-align: center;
+    margin-top: auto; /* Pushes footer to the bottom */
 }
 
 footer a {
@@ -58,12 +68,14 @@ footer a {
     text-decoration: none;
 }
 
+/* Section padding */
 section {
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Projects section */
 .projects .project {
     margin-bottom: 20px;
 }
@@ -71,4 +83,9 @@ section {
 .projects .project a {
     color: #007bff;
     text-decoration: none;
+}
+
+/* About section */
+.about h1, .projects h1, .contact h1 {
+    text-align: center;
 }
