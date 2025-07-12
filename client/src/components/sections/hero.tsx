@@ -86,6 +86,16 @@ export default function Hero() {
                 <FiMail className="mr-2 group-hover:translate-x-0.5 transition-transform" />
                 Get In Touch
               </motion.button>
+              
+              <motion.a
+                href="/analytics"
+                className="group border-2 border-purple-500/30 bg-purple-500/5 text-white hover:bg-purple-500 hover:border-purple-500 px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center text-sm"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FiGithub className="mr-2 group-hover:rotate-12 transition-transform" />
+                View Analytics
+              </motion.a>
             </motion.div>
           </motion.div>
           

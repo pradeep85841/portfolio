@@ -38,12 +38,19 @@ export default function Navigation() {
     { href: "#skills", label: "Skills" },
     { href: "#blog", label: "Blog" },
     { href: "#contact", label: "Contact" },
+    { href: "/analytics", label: "Analytics" },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (href.startsWith('/')) {
+      // Handle route navigation
+      window.location.href = href;
+    } else {
+      // Handle section scrolling
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     }
     setIsMobileMenuOpen(false);
   };
