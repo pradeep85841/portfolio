@@ -1,0 +1,72 @@
+You are a senior frontend engineer with backend knowledge, building a visually compelling and technically impressive portfolio website using React.js.
+The portfolio represents a Software Engineer with strong experience in real-time data streaming, Apache Kafka, and automated testing of distributed systems.
+
+🎯 Your goal: Create a standout personal portfolio that reflects deep expertise in scalable systems, streaming architecture, and robust test engineering. This site should appeal to companies hiring for data-intensive platforms, backend streaming pipelines, or Kafka-focused roles.
+
+✅ Key Sections to Include:
+
+Hero Section
+
+Bold animated title: “Hi, I'm [Your Name] — I build and test real-time systems.”
+
+Tagline emphasizing Kafka, event-driven pipelines, SDET, and performance testing.
+
+Parallax or animated background (Kafka streams, system nodes, or terminal-style logs flowing).
+\n\n\n> - Featured Projects
+
+Highlight Kafka consumer/producer tools, observability dashboards, automation test suites, and streaming microservices.
+
+Include GitHub/demo links, key contributions, and technology stack.
+
+Use animated cards with Framer Motion for hover/scroll effects.
+\n\n\n> - Professional Experience
+
+Emphasize distributed system testing, Kafka pipelines, Solace messaging, CI/CD integration, and performance validation at scale.
+
+Use timeline layout or styled blocks for each company/role.
+\n\n\n> - Skills & Tools
+
+Group into: Streaming & Messaging (Kafka, Solace), Testing Tools (Rest Assured, JUnit), Backend (Java, Spring Boot), DevOps (Docker, Jenkins), Frontend (React, Tailwind)
+
+Style with animated tiles or interactive hover badges.
+\n\n\n> - Blog Section
+
+Articles on Kafka testing strategies, building resilient pipelines, Solace vs Kafka comparison, distributed test planning, etc.
+
+Use MDX or integrate with a CMS like Contentful or Sanity for dynamic blogs.
+\n\n\n> - Resume Download
+
+Prominent “Download Resume” button in Hero and Footer with icon.
+\n\n\n> - Contact Section
+
+GitHub, LinkedIn, Email links with icons
+
+Optional contact form (emailjs or third-party backend)
+\n\n\n✅ Tech Stack:
+
+React.js
+
+Tailwind CSS for styling
+
+Framer Motion for animations
+
+React Icons
+
+Parallax or canvas animation (for real-time aesthetic)
+\n\n\n🎨 Design Requirements:
+
+Minimal, dark-themed, clean UI inspired by Kafka/terminal aesthetics
+
+Use purple, teal, and neon accents for tech vibes
+
+Smooth page transitions and scroll-triggered animations
+
+Responsive across devices
+\n\n\n🧠 Optional Features:
+
+Visualize Kafka data stream architecture (SVG or custom graphics)
+
+Live log streaming simulation in hero background
+
+Tags/filters in blog section: Kafka, Automation, Streaming, CI/CD
+\n\n\n📌 Outcome: A job-winning portfolio website tailored for a Software Engineer in the Kafka + streaming + test automation space, designed to impress hiring managers, tech leads, and recruiters.
