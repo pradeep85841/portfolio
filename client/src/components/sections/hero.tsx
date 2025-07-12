@@ -1,0 +1,132 @@
+import { motion } from "framer-motion";
+import { FiDownload, FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
+import { SiApachekafka, SiSpring, SiDocker, SiKubernetes, SiOpenjdk } from "react-icons/si";
+import FloatingParticles from "../floating-particles";
+import ThreeBackground from "../three-background";
+
+export default function Hero() {
+  const techStack = [
+    { icon: SiApachekafka, name: "Apache Kafka", color: "text-electric" },
+    { icon: SiSpring, name: "Spring Boot", color: "text-green-400" },
+    { icon: SiDocker, name: "Docker", color: "text-blue-400" },
+    { icon: SiKubernetes, name: "Kubernetes", color: "text-blue-500" },
+    { icon: SiOpenjdk, name: "Java", color: "text-orange-500" },
+  ];
+
+  const scrollToContact = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
+  return (
+    <section id="home" className="min-h-screen relative overflow-hidden animated-bg">
+      <ThreeBackground />
+      <FloatingParticles />
+      
+      <div className="relative z-10 flex items-center justify-center min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              className="mb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+            >
+              <span className="inline-block px-4 py-2 bg-electric/10 border border-electric/30 rounded-full text-electric text-sm font-medium">
+                Senior Software Engineer
+              </span>
+            </motion.div>
+            
+            <motion.h1 
+              className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-electric to-cyan bg-clip-text text-transparent"
+              initial={{ scale: 0.95 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Alex Thompson
+            </motion.h1>
+            
+            <motion.p 
+              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Building enterprise-grade{" "}
+              <span className="text-electric font-semibold">streaming architectures</span> and{" "}
+              <span className="text-cyan font-semibold">distributed systems</span> that power critical business operations. 
+              Expert in Apache Kafka, event-driven design, and comprehensive test automation.
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
+              <motion.button 
+                className="group bg-electric hover:bg-electric/90 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FiDownload className="mr-2 group-hover:translate-y-0.5 transition-transform" />
+                Download Resume
+              </motion.button>
+              
+              <motion.button 
+                onClick={scrollToContact}
+                className="group border-2 border-electric/30 bg-electric/5 text-white hover:bg-electric hover:border-electric px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <FiMail className="mr-2 group-hover:translate-x-0.5 transition-transform" />
+                Get In Touch
+              </motion.button>
+            </motion.div>
+          </motion.div>
+          
+          {/* Tech Stack Preview */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+          >
+            <p className="text-gray-400 mb-6">Expertise in</p>
+            <div className="flex flex-wrap justify-center gap-6">
+              {techStack.map((tech, index) => (
+                <motion.div
+                  key={tech.name}
+                  className="glass-effect px-4 py-2 rounded-full text-sm font-mono flex items-center"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <tech.icon className={`mr-2 ${tech.color}`} />
+                  {tech.name}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </div>
+      
+      {/* Scroll Indicator */}
+      <motion.div 
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <div className="w-6 h-10 border-2 border-electric rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-electric rounded-full mt-2"></div>
+        </div>
+      </motion.div>
+    </section>
+  );
+}
