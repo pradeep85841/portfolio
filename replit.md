@@ -8,6 +8,21 @@ This is a full-stack portfolio website built for a Senior Software Engineer spec
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+### Analytics Dashboard (January 2025)
+- Implemented comprehensive analytics dashboard with interactive charts
+- Added real-time data visualization using Recharts library
+- Created backend API endpoints for analytics data
+- Integrated time-range filtering and responsive design
+
+### Personalized Welcome Animation (January 2025)
+- Developed multi-step welcome animation for first-time visitors
+- Added personalized greetings based on user location/timezone
+- Implemented localStorage-based first-visit detection
+- Created development controls for testing welcome states
+- Added smooth Framer Motion animations with professional styling
+
 ## System Architecture
 
 ### Frontend Architecture
