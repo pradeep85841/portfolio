@@ -32,25 +32,23 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.div
-              className="mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-            >
-              <span className="inline-block px-4 py-2 bg-electric/10 border border-electric/30 rounded-full text-electric text-sm font-medium">
-                Senior Software Engineer
-              </span>
-            </motion.div>
-            
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-electric to-cyan bg-clip-text text-transparent"
+              className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white via-electric to-cyan bg-clip-text text-transparent"
               initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               Alex Thompson
             </motion.h1>
+            
+            <motion.h2 
+              className="text-xl md:text-2xl font-semibold mb-6 text-electric"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              Senior Software Engineer
+            </motion.h2>
             
             <motion.p 
               className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
