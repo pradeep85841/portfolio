@@ -24,6 +24,17 @@ Before running this project locally, ensure you have the following installed:
    ```
 
 3. **Start the development server**
+   
+   **For Windows:**
+   ```bash
+   # Option 1: Using the batch file
+   dev.bat
+   
+   # Option 2: Manual command
+   set NODE_ENV=development && npx tsx server/index.ts
+   ```
+   
+   **For Mac/Linux:**
    ```bash
    npm run dev
    ```
