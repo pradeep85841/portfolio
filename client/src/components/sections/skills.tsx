@@ -173,11 +173,17 @@ export default function Skills() {
               </div>
               
               <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name} className="flex items-center justify-between">
-                    <span className="text-gray-300">{skill.name}</span>
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.div 
+                    key={skill.name} 
+                    className="flex items-center justify-between py-2 px-3 rounded-lg hover:bg-white/5 transition-colors"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, delay: 0.8 + index * 0.1 + skillIndex * 0.1 }}
+                  >
+                    <span className="text-gray-300 font-medium">{skill.name}</span>
                     <StarRating level={skill.level} />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>

@@ -139,11 +139,11 @@ export default function Blog() {
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-electric transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-electric transition-colors leading-tight">
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-300 mb-4 line-clamp-3">
+                <p className="text-gray-300 mb-4 line-clamp-3 leading-relaxed">
                   {post.description}
                 </p>
                 
@@ -162,13 +162,17 @@ export default function Blog() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-12"
         >
-          <button className="inline-flex items-center bg-electric/20 text-electric px-6 py-3 rounded-lg hover:bg-electric/30 transition-colors">
+          <motion.button 
+            className="inline-flex items-center bg-electric/20 text-electric px-8 py-4 rounded-lg hover:bg-electric/30 transition-all duration-300 border border-electric/30 hover:border-electric/50 font-semibold"
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+          >
             <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"/>
               <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"/>
             </svg>
             View All Articles
-          </button>
+          </motion.button>
         </motion.div>
       </div>
     </section>

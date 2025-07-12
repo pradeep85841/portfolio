@@ -98,8 +98,8 @@ export default function Experience() {
               >
                 <div className="lg:w-1/2 lg:px-8">
                   <div className="professional-card rounded-2xl p-8 hover-lift">
-                    <div className="flex items-center mb-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center mr-4 bg-opacity-20 ${
+                    <div className="flex items-center mb-6">
+                      <div className={`w-14 h-14 rounded-xl flex items-center justify-center mr-4 bg-opacity-20 border border-white/10 ${
                         exp.color === 'electric' ? 'bg-electric' :
                         exp.color === 'cyan' ? 'bg-cyan' :
                         'bg-purple'
@@ -110,19 +110,26 @@ export default function Experience() {
                           'text-purple'
                         }`} />
                       </div>
-                      <div>
-                        <h3 className={`text-xl font-bold ${
+                      <div className="flex-1">
+                        <h3 className={`text-xl font-bold mb-1 ${
                           exp.color === 'electric' ? 'text-electric' :
                           exp.color === 'cyan' ? 'text-cyan' :
                           'text-purple'
                         }`}>
                           {exp.position}
                         </h3>
-                        <p className="text-gray-300">{exp.company}</p>
-                        <p className="text-sm text-gray-400">{exp.startDate} - {exp.endDate}</p>
+                        <p className="text-gray-300 font-medium">{exp.company}</p>
+                        <div className="flex items-center mt-1">
+                          <p className="text-sm text-gray-400">{exp.startDate} - {exp.endDate}</p>
+                          {exp.current && (
+                            <span className="ml-2 px-2 py-1 bg-electric/20 text-electric text-xs rounded-full">
+                              Current
+                            </span>
+                          )}
+                        </div>
                       </div>
                     </div>
-                    <p className="text-gray-300 mb-4">
+                    <p className="text-gray-300 mb-6 leading-relaxed">
                       {exp.description}
                     </p>
                     <div className="flex flex-wrap gap-2">

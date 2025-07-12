@@ -70,44 +70,47 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold mb-8 text-electric">Get in Touch</h3>
+            <p className="text-gray-300 mb-8 leading-relaxed">
+              Open to discussing new opportunities, collaborations, or consulting projects focused on streaming architectures and distributed systems.
+            </p>
             
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center border border-electric/30">
                   <FiMail className="text-electric" />
                 </div>
                 <div>
-                  <p className="text-gray-300">Email</p>
+                  <p className="text-gray-400 text-sm">Email</p>
                   <p className="text-white font-semibold">alex.thompson@email.com</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center border border-electric/30">
                   <FaLinkedin className="text-electric" />
                 </div>
                 <div>
-                  <p className="text-gray-300">LinkedIn</p>
+                  <p className="text-gray-400 text-sm">LinkedIn</p>
                   <p className="text-white font-semibold">linkedin.com/in/alex-thompson</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center border border-electric/30">
                   <FaGithub className="text-electric" />
                 </div>
                 <div>
-                  <p className="text-gray-300">GitHub</p>
+                  <p className="text-gray-400 text-sm">GitHub</p>
                   <p className="text-white font-semibold">github.com/alex-thompson</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-4">
-                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center">
+                <div className="w-12 h-12 bg-electric/20 rounded-lg flex items-center justify-center border border-electric/30">
                   <FiMapPin className="text-electric" />
                 </div>
                 <div>
-                  <p className="text-gray-300">Location</p>
+                  <p className="text-gray-400 text-sm">Location</p>
                   <p className="text-white font-semibold">San Francisco, CA</p>
                 </div>
               </div>
@@ -144,6 +147,9 @@ export default function Contact() {
             className="professional-card rounded-2xl p-8"
           >
             <h3 className="text-2xl font-bold mb-6 text-white">Send Message</h3>
+            <p className="text-gray-400 mb-6">
+              Have a project in mind? Let's discuss how we can build scalable streaming solutions together.
+            </p>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>

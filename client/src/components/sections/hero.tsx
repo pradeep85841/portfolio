@@ -97,19 +97,19 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <p className="text-gray-400 mb-6">Expertise in</p>
-            <div className="flex flex-wrap justify-center gap-6">
+            <p className="text-gray-400 mb-8 text-lg">Core Technologies</p>
+            <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
               {techStack.map((tech, index) => (
                 <motion.div
                   key={tech.name}
-                  className="glass-effect px-4 py-2 rounded-full text-sm font-mono flex items-center"
+                  className="professional-card px-6 py-3 rounded-full text-sm font-medium flex items-center border border-white/10 hover:border-electric/30 transition-all duration-300"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
                 >
-                  <tech.icon className={`mr-2 ${tech.color}`} />
-                  {tech.name}
+                  <tech.icon className={`mr-2 text-lg ${tech.color}`} />
+                  <span className="text-white">{tech.name}</span>
                 </motion.div>
               ))}
             </div>
@@ -119,12 +119,22 @@ export default function Hero() {
       
       {/* Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
+        onClick={() => {
+          const element = document.querySelector("#projects");
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }}
       >
-        <div className="w-6 h-10 border-2 border-electric rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-electric rounded-full mt-2"></div>
+        <div className="w-6 h-10 border-2 border-electric/60 rounded-full flex justify-center hover:border-electric transition-colors">
+          <motion.div 
+            className="w-1 h-3 bg-electric rounded-full mt-2"
+            animate={{ opacity: [1, 0.3, 1] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          />
         </div>
       </motion.div>
     </section>

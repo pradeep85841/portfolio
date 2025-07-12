@@ -102,12 +102,20 @@
   .scroll-fade {
     opacity: 0;
     transform: translateY(30px);
-    transition: all 0.6s ease;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   
   .scroll-fade.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  
+  .professional-glow {
+    box-shadow: 0 0 20px hsla(207, 90%, 54%, 0.15);
+  }
+  
+  .professional-glow:hover {
+    box-shadow: 0 0 30px hsla(207, 90%, 54%, 0.25);
   }
 }
 

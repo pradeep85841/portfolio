@@ -104,25 +104,35 @@ export default function Projects() {
                 className="w-full h-48 object-cover rounded-xl mb-6 group-hover:scale-105 transition-transform duration-300"
               />
               
-              <div className="flex items-center justify-between mb-4">
-                <h3 className={`text-2xl font-bold ${colorClasses[project.color as keyof typeof colorClasses].split(' ')[0]}`}>
+              <div className="flex items-start justify-between mb-4">
+                <h3 className={`text-2xl font-bold leading-tight ${colorClasses[project.color as keyof typeof colorClasses].split(' ')[0]}`}>
                   {project.title}
                 </h3>
-                <div className="flex space-x-3">
+                <div className="flex space-x-3 flex-shrink-0 ml-4">
                   {project.githubUrl && (
-                    <a href={project.githubUrl} className="text-gray-400 hover:text-white transition-colors">
+                    <motion.a 
+                      href={project.githubUrl} 
+                      className="text-gray-400 hover:text-electric transition-colors p-2 rounded-lg hover:bg-electric/10"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
                       <FiGithub size={20} />
-                    </a>
+                    </motion.a>
                   )}
                   {project.liveUrl && (
-                    <a href={project.liveUrl} className="text-gray-400 hover:text-white transition-colors">
+                    <motion.a 
+                      href={project.liveUrl} 
+                      className="text-gray-400 hover:text-electric transition-colors p-2 rounded-lg hover:bg-electric/10"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
                       <FiExternalLink size={20} />
-                    </a>
+                    </motion.a>
                   )}
                 </div>
               </div>
               
-              <p className="text-gray-300 mb-6">
+              <p className="text-gray-300 mb-6 leading-relaxed">
                 {project.description}
               </p>
               
