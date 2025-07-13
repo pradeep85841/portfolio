@@ -23,9 +23,9 @@ const skillCategories: SkillCategory[] = [
     color: "electric",
     skills: [
       { name: "Apache Kafka", level: 5 },
-      { name: "Solace PubSub+", level: 4 },
-      { name: "RabbitMQ", level: 4 },
-      { name: "Apache Pulsar", level: 3 }
+      { name: "Confluent Kafka", level: 4 },
+      { name: "RabbitMQ", level: 3 },
+      { name: "Solace PubSub+", level: 3 }
     ]
   },
   {
@@ -44,7 +44,7 @@ const skillCategories: SkillCategory[] = [
     icon: FiServer,
     color: "purple",
     skills: [
-      { name: "Java/Spring Boot", level: 5 },
+      { name: "JavaScript", level: 5 },
       { name: "Microservices", level: 5 },
       { name: "Node.js", level: 4 },
       { name: "PostgreSQL/MongoDB", level: 4 }
@@ -55,10 +55,9 @@ const skillCategories: SkillCategory[] = [
     icon: FiCloud,
     color: "green",
     skills: [
-      { name: "Docker/Kubernetes", level: 5 },
+      { name: "Docker", level: 5 },
       { name: "Jenkins/GitLab CI", level: 5 },
-      { name: "AWS/Azure", level: 4 },
-      { name: "Terraform", level: 3 }
+      { name: "AWS/Azure", level: 4 }
     ]
   },
   {
@@ -151,14 +150,16 @@ export default function Skills() {
                   category.color === 'orange' ? 'bg-orange-500' :
                   'bg-blue-500'
                 }`}>
-                  <category.icon className={`text-xl ${
+                  <div className={`text-xl ${
                     category.color === 'electric' ? 'text-electric' :
                     category.color === 'cyan' ? 'text-cyan' :
                     category.color === 'purple' ? 'text-purple' :
                     category.color === 'green' ? 'text-green-400' :
                     category.color === 'orange' ? 'text-orange-500' :
                     'text-blue-500'
-                  }`} />
+                  }`} >
+                  <category.icon />
+                  </div>
                 </div>
                 <h3 className={`text-xl font-bold ${
                   category.color === 'electric' ? 'text-electric' :
