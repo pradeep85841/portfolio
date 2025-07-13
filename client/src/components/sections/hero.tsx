@@ -7,9 +7,9 @@ import ThreeBackground from "../three-background";
 export default function Hero() {
   const techStack = [
     { icon: SiApachekafka, name: "Apache Kafka", color: "text-electric" },
-    { icon: SiSpring, name: "Spring Boot", color: "text-green-400" },
+    { icon: SiSpring, name: "Microservices", color: "text-green-400" },
     { icon: SiDocker, name: "Docker", color: "text-blue-400" },
-    { icon: SiKubernetes, name: "Kubernetes", color: "text-blue-500" },
+    { icon: SiKubernetes, name: "JavaScript", color: "text-blue-500" },
     { icon: SiOpenjdk, name: "Java", color: "text-orange-500" },
   ];
 
