@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from 'emailjs-com';
 
 export default function Contact() {
   const ref = useRef(null);
@@ -23,11 +24,28 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
+
+    emailjs.send(
+    'service_c7qs0p5',        
+    'template_bidxqrd',       
+    formData,
+    'XifIrRcihknXIoEst'            
+  )
+.then((res) => {
+    console.log('Email sent:', res.status, res.text);
+     toast({
       title: "Message Sent!",
       description: "Thank you for your message. I'll get back to you soon.",
     });
     setFormData({ name: "", email: "", subject: "", message: "" });
+  })
+  .catch((err) => {
+    console.error('Email send failed:', err);
+     toast({
+      title: "Message send failed!",
+      description: "Failed to send message. ❌",
+    });
+  });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,12 +56,12 @@ export default function Contact() {
   };
 
   const socialLinks = [
-    { icon: FaLinkedin, href: "https://linkedin.com/in/alex-thompson", label: "LinkedIn" },
-    { icon: FaGithub, href: "https://github.com/alex-thompson", label: "GitHub" },
-    { icon: FaTwitter, href: "https://twitter.com/alex_thompson", label: "Twitter" },
-    { icon: FaMedium, href: "https://medium.com/@alex.thompson", label: "Medium" },
-    { icon: FaDev, href: "https://dev.to/alex-thompson", label: "Dev.to" },
-    { icon: FaStackOverflow, href: "https://stackoverflow.com/users/alex-thompson", label: "Stack Overflow" }
+    { icon: FaLinkedin, href: "https://linkedin.com/in/pradeep-kunchala-845320188", label: "LinkedIn" },
+    { icon: FaGithub, href: "https://github.com/pradeep85841", label: "GitHub" },
+    { icon: FaTwitter, href: "https://twitter.com/", label: "Twitter" },
+    { icon: FaMedium, href: "https://medium.com/", label: "Medium" },
+    { icon: FaDev, href: "https://dev.to/", label: "Dev.to" },
+    { icon: FaStackOverflow, href: "https://stackoverflow.com/users/", label: "Stack Overflow" }
   ];
 
   return (
@@ -81,7 +99,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
-                  <p className="text-white font-semibold">alex.thompson@email.com</p>
+                  <p className="text-white font-semibold">pradeep.kunchala15@gmail.com</p>
                 </div>
               </div>
               
@@ -91,7 +109,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">LinkedIn</p>
-                  <p className="text-white font-semibold">linkedin.com/in/alex-thompson</p>
+                  <p className="text-white font-semibold">linkedin.com/in/pradeep-kunchala-845320188</p>
                 </div>
               </div>
               
@@ -101,7 +119,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">GitHub</p>
-                  <p className="text-white font-semibold">github.com/alex-thompson</p>
+                  <p className="text-white font-semibold">github.com/pradeep85841</p>
                 </div>
               </div>
               
@@ -111,7 +129,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Location</p>
-                  <p className="text-white font-semibold">San Francisco, CA</p>
+                  <p className="text-white font-semibold">Hyderabad, Telangana</p>
                 </div>
               </div>
             </div>
@@ -152,61 +170,63 @@ export default function Contact() {
             </p>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Label htmlFor="name" className="text-gray-300">Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  type="text"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="mt-2 bg-navy/50 border-gray-600 text-white placeholder-gray-400 focus:border-electric focus:ring-electric"
-                  placeholder="Your Name"
-                  required
-                />
-              </div>
+           <div>
+  <Label htmlFor="name" className="text-gray-300">Name</Label>
+  <Input
+    id="name"
+    name="name"
+    type="text"
+    value={formData.name}
+    onChange={handleChange}
+    className={`mt-2 bg-navy/50 border-gray-600 placeholder-gray-400 focus:border-electric focus:ring-electric 
+      ${formData.name.length > 0 ? 'text-electric' : 'text-white'} transition-colors duration-300`}
+    placeholder="Your Name"
+    required
+  />
+</div>
+             <div>
+  <Label htmlFor="email" className="text-gray-300">Email</Label>
+  <Input
+    id="email"
+    name="email"
+    type="email"
+    value={formData.email}
+    onChange={handleChange}
+    className={`mt-2 bg-navy/50 border-gray-600 placeholder-gray-400 focus:border-electric focus:ring-electric 
+      ${formData.email.length > 0 ? 'text-electric' : 'text-white'} transition-colors duration-300`}
+    placeholder="your@email.com"
+    required
+  />
+</div>
               
-              <div>
-                <Label htmlFor="email" className="text-gray-300">Email</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="mt-2 bg-navy/50 border-gray-600 text-white placeholder-gray-400 focus:border-electric focus:ring-electric"
-                  placeholder="your@email.com"
-                  required
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="subject" className="text-gray-300">Subject</Label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  className="mt-2 bg-navy/50 border-gray-600 text-white placeholder-gray-400 focus:border-electric focus:ring-electric"
-                  placeholder="Project Discussion"
-                  required
-                />
-              </div>
-              
-              <div>
-                <Label htmlFor="message" className="text-gray-300">Message</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="mt-2 bg-navy/50 border-gray-600 text-white placeholder-gray-400 focus:border-electric focus:ring-electric resize-none"
-                  placeholder="Tell me about your project..."
-                  required
-                />
-              </div>
+           <div>
+  <Label htmlFor="subject" className="text-gray-300">Subject</Label>
+  <Input
+    id="subject"
+    name="subject"
+    type="text"
+    value={formData.subject}
+    onChange={handleChange}
+    className={`mt-2 bg-navy/50 border-gray-600 placeholder-gray-400 focus:border-electric focus:ring-electric 
+      ${formData.subject.length > 0 ? 'text-electric' : 'text-white'} transition-colors duration-300`}
+    placeholder="Project Discussion"
+    required
+  />
+</div>
+             <div>
+  <Label htmlFor="message" className="text-gray-300">Message</Label>
+  <Textarea
+    id="message"
+    name="message"
+    value={formData.message}
+    onChange={handleChange}
+    rows={4}
+    className={`mt-2 bg-navy/50 border-gray-600 placeholder-gray-400 focus:border-electric focus:ring-electric resize-none
+      ${formData.message.length > 0 ? 'text-electric' : 'text-white'}`}
+    placeholder="Tell me about your project..."
+    required
+  />
+</div>
               
               <Button
                 type="submit"

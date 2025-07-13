@@ -71,7 +71,7 @@ export default function Navigation() {
           >
             <FiCode className="mr-2 text-electric" />
             <span className="bg-gradient-to-r from-white to-electric bg-clip-text text-transparent">
-              Alex Thompson
+              Pradeep Kunchala
             </span>
           </motion.div>
           

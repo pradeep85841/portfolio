@@ -19,10 +19,10 @@ interface Experience {
 const experiences: Experience[] = [
   {
     id: 1,
-    company: "TechCorp Solutions",
-    position: "Senior Software Engineer",
+    company: "SGP India Private Limited",
+    position: "QA Automation Engineer",
     description: "Lead architect for real-time data processing platform handling 100M+ events daily. Designed and implemented Kafka-based streaming architecture with 99.9% uptime.",
-    technologies: ["Kafka", "Java", "Spring Boot", "Kubernetes"],
+    technologies: ["Kafka", "Java", "Jenkins", "Automation"],
     startDate: "2022",
     endDate: "Present",
     current: true,
@@ -31,11 +31,11 @@ const experiences: Experience[] = [
   },
   {
     id: 2,
-    company: "DataStream Inc.",
+    company: "SOFTLINE SOLUTIONS PTY LTD",
     position: "Software Development Engineer in Test",
     description: "Built comprehensive test automation framework for distributed systems. Implemented chaos engineering practices reducing production incidents by 60%.",
     technologies: ["TestNG", "Rest Assured", "Docker", "Jenkins"],
-    startDate: "2020",
+    startDate: "2021",
     endDate: "2022",
     current: false,
     color: "cyan",
@@ -43,11 +43,11 @@ const experiences: Experience[] = [
   },
   {
     id: 3,
-    company: "StreamFlow Technologies",
-    position: "Backend Engineer",
+    company: "SOWEDANE",
+    position: "IoT Intern",
     description: "Developed microservices architecture with event-driven design patterns. Implemented Solace messaging for high-throughput financial applications.",
     technologies: ["Spring Boot", "Solace", "PostgreSQL", "RabbitMQ"],
-    startDate: "2018",
+    startDate: "2019",
     endDate: "2020",
     current: false,
     color: "purple",
@@ -87,6 +87,7 @@ export default function Experience() {
           
           <div className="space-y-12 relative z-10">
             {experiences.map((exp, index) => (
+              
               <motion.div
                 key={exp.id}
                 initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -104,11 +105,19 @@ export default function Experience() {
                         exp.color === 'cyan' ? 'bg-cyan' :
                         'bg-purple'
                       }`}>
-                        <exp.icon className={`text-xl ${
+                      {/*<exp.icon className={`text-xl ${
                           exp.color === 'electric' ? 'text-electric' :
                           exp.color === 'cyan' ? 'text-cyan' :
                           'text-purple'
-                        }`} />
+                        }`} />*/}
+                        <div className={`text-xl ${
+  exp.color === 'electric' ? 'text-electric' :
+  exp.color === 'cyan' ? 'text-cyan' :
+  'text-purple'
+}`}>
+  <exp.icon />
+</div>
+
                       </div>
                       <div className="flex-1">
                         <h3 className={`text-xl font-bold mb-1 ${

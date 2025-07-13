@@ -13,6 +13,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        electric: {
+    DEFAULT: '#7DF9FF',
+    60: 'rgba(125, 249, 255, 0.6)', // Optional if using opacity classes
+  },
         card: {
           DEFAULT: "var(--card)",
           foreground: "var(--card-foreground)",

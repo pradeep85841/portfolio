@@ -38,7 +38,7 @@ export default function Hero() {
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Alex Thompson
+              Pradeep Kunchala
             </motion.h1>
             
             <motion.h2 

@@ -17,10 +17,10 @@ export default function Footer() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="text-gray-300 text-lg font-medium">&copy; 2024 Alex Thompson. All rights reserved.</p>
+              <p className="text-gray-300 text-lg font-medium">&copy; 2024 Pradeep Kunchala. All rights reserved.</p>
               <p className="text-gray-400 text-sm mt-2">Building enterprise-grade streaming architectures</p>
               <div className="flex justify-center md:justify-start space-x-6 mt-4">
-                <span className="text-gray-500 text-sm">San Francisco, CA</span>
+                <span className="text-gray-500 text-sm">Hyderabad, Telangana</span>
                 <span className="text-gray-500 text-sm">•</span>
                 <span className="text-gray-500 text-sm">Senior Software Engineer</span>
               </div>
