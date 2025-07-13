@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
 import { FiDownload, FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
-import { SiApachekafka, SiSpring, SiDocker, SiKubernetes, SiOpenjdk } from "react-icons/si";
+import { SiApachekafka, SiSpring, SiDocker, SiKubernetes, SiOpenjdk, SiWebflow, SiJavascript } from "react-icons/si";
 import FloatingParticles from "../floating-particles";
 import ThreeBackground from "../three-background";
 
 export default function Hero() {
   const techStack = [
     { icon: SiApachekafka, name: "Apache Kafka", color: "text-electric" },
-    { icon: SiSpring, name: "Microservices", color: "text-green-400" },
+    { icon: SiWebflow, name: "Microservices", color: "text-green-400" },
     { icon: SiDocker, name: "Docker", color: "text-blue-400" },
-    { icon: SiKubernetes, name: "JavaScript", color: "text-blue-500" },
+    { icon: SiJavascript, name: "JavaScript", color: "text-blue-500" },
     { icon: SiOpenjdk, name: "Java", color: "text-orange-500" },
   ];
 
